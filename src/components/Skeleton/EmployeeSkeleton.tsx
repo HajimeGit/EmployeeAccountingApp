@@ -6,7 +6,7 @@ const EmployeeSkeleton = () => {
   const buttonClasses = "w-[58px] h-[40px]";
 
   return (
-    <div className="w-2/4 h-[134px] flex justify-between gap-5 border rounded p-5">
+    <div className="h-[134px] flex justify-between gap-5 border rounded p-5">
       <div className="max-w-40 flex flex-col gap-8">
         <Skeleton className={inputClasses} />
         <Skeleton className={inputClasses} />
