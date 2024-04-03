@@ -21,19 +21,17 @@ const EmployeeList: React.FC<EmployeeListProps> = () => {
   }
 
   return (
-    <>
-      <div className="w-full rounded-md grid grid-cols-1 gap-8 md:grid-cols-2">
-        {filteredEmployees.map(({ uuid, promoted, name, salary }) => (
-          <Employee
-            uuid={uuid}
-            key={uuid}
-            promoted={promoted}
-            name={name}
-            salary={salary}
-          />
-        ))}
-      </div>
-    </>
+    <div className="w-full rounded-md grid grid-cols-1 gap-8 md:grid-cols-2">
+      {filteredEmployees.map(({ uuid, promoted, name, salary }) => (
+        <Employee
+          uuid={uuid}
+          key={uuid}
+          promoted={promoted}
+          name={name}
+          salary={salary}
+        />
+      ))}
+    </div>
   );
 };
 
