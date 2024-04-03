@@ -24,8 +24,12 @@ export function filterEmployeesByType(
     case "salary":
       return employees.filter((employee) => employee.salary > salaryFilter);
     case "promotion":
-      return employees;
+      return employees.filter((employee) => employee.promoted);
     default:
       return employees;
   }
+}
+
+export function getEmployeesForPromotion(employees: EmployeeType[]) {
+  return employees.filter((employee) => employee.promoted);
 }

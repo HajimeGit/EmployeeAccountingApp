@@ -6,6 +6,7 @@ export enum EmployeeActionTypes {
   SET_EMPLOYEES = "SET_EMPLOYEES",
   SET_LOADING = "SET_LOADING",
   ADD_EMPLOYEE = "ADD_EMPLOYEE",
+  UPDATE_EMPLOYEE = "UPDATE_EMPLOYEE",
   REMOVE_EMPLOYEE = "REMOVE_EMPLOYEE",
 }
 
@@ -19,7 +20,7 @@ export const EmployeeInitialState = {
   loading: true,
 };
 
-export type EmployeeState = typeof EmployeeInitialState & { loading: boolean };
+export type EmployeeState = typeof EmployeeInitialState;
 export const employeeReducer = (
   state: EmployeeState,
   action: EmployeeAction,
@@ -41,6 +42,13 @@ export const employeeReducer = (
     case EmployeeActionTypes.ADD_EMPLOYEE:
       return {
         employees: [...state.employees, payload],
+        loading: false,
+      };
+    case EmployeeActionTypes.UPDATE_EMPLOYEE:
+      return {
+        employees: state.employees.map((employee) =>
+          employee.uuid === payload.uuid ? payload : employee,
+        ),
         loading: false,
       };
     case EmployeeActionTypes.REMOVE_EMPLOYEE:

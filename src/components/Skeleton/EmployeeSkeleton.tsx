@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const EmployeeSkeleton = () => {
   const classes = "w-full h-[20px] rounded-full mb-3";
-  const skeletonCount = 3; // Number of skeleton components to render
+  const skeletonCount = 3;
 
   return (
     <>

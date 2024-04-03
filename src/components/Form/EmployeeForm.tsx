@@ -43,17 +43,17 @@ const EmployeeForm: React.FC<FormProps> = () => {
   function onSubmit(data: z.infer<typeof formSchema>) {
     dispatch({
       type: EmployeeActionTypes.ADD_EMPLOYEE,
-      payload: { uuid: uuidv4(), ...data },
+      payload: { uuid: uuidv4(), ...data, promoted: false },
     });
     form.reset();
   }
 
   return (
-    <div className="w-full border rounded-md p-6 flex flex-col gap-4 text-2xl">
-      <h2 className="text-3xl">Add new employee</h2>
+    <div className="w-full border rounded-md p-6 flex flex-col gap-4 text-base md:text-2xl ">
+      <h2 className="text-lg md:text-3xl">Add a new employee</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="flex gap-5">
+          <div className="flex flex-col gap-5 md:flex-row">
             <FormField
               name="name"
               control={form.control}
@@ -63,7 +63,7 @@ const EmployeeForm: React.FC<FormProps> = () => {
                     <Input
                       {...field}
                       placeholder="What's it's name?"
-                      className="w-60"
+                      className="w-full md:w-60"
                     />
                   </FormControl>
                   <FormMessage />
@@ -81,7 +81,7 @@ const EmployeeForm: React.FC<FormProps> = () => {
                       {...field}
                       min="0"
                       placeholder="Salary in $"
-                      className="w-60"
+                      className="w-full md:w-60"
                     />
                   </FormControl>
                   <FormMessage />

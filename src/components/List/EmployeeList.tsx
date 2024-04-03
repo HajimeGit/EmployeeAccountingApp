@@ -8,22 +8,29 @@ interface EmployeeListProps {}
 const EmployeeList: React.FC<EmployeeListProps> = () => {
   const { filteredEmployees, loading } = useContext(EmployeeContext);
 
-  return (
-    <div className="w-full border rounded-md p-6 flex flex-col gap-2">
-      {loading ? (
-        <EmployeeSkeleton />
-      ) : filteredEmployees.length !== 0 ? (
-        filteredEmployees.map((employee) => (
-          <Employee
-            uuid={employee.uuid}
-            key={employee.uuid}
-            name={employee.name}
-            salary={employee.salary}
-          />
-        ))
-      ) : (
+  if (loading) {
+    return <EmployeeSkeleton />;
+  }
+
+  if (filteredEmployees.length === 0) {
+    return (
+      <div className="border rounded p-6 w-full">
         <h3>No employees found</h3>
-      )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full rounded-md grid grid-cols-1 gap-8 md:grid-cols-2">
+      {filteredEmployees.map(({ uuid, promoted, name, salary }) => (
+        <Employee
+          uuid={uuid}
+          key={uuid}
+          promoted={promoted}
+          name={name}
+          salary={salary}
+        />
+      ))}
     </div>
   );
 };

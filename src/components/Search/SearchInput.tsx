@@ -16,7 +16,6 @@ const SearchInput: React.FC<SearchInputProps> = ({ ...props }) => {
     }
 
     const filtered = filterEmployeesByName(employees, inputValue);
-    console.log(filtered);
 
     setFilteredEmployees(filtered);
   }, [inputValue]);

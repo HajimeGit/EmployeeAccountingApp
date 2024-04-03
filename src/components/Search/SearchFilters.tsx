@@ -23,7 +23,7 @@ const SearchFilters: React.FC<SearchFiltersProps> = () => {
   }, [activeFilter]);
 
   return (
-    <div>
+    <div className="flex flex-col gap-3 md:flex-row">
       {FilterButtons.map((button) => (
         <Button
           key={button.id}

@@ -5,10 +5,16 @@ import Dashboard from "@/components/Dashboard/Dashboard";
 
 export default function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <div className="flex flex-col h-screen justify-center items-center max-w-3xl mx-auto">
-        <ModeToggle />
-        <Dashboard />
+    <ThemeProvider>
+      <div className="relative flex min-h-screen flex-col bg-background">
+        <main className="flex-1">
+          <div className="container relative p-10 md:flex md:items-center md:h-full md:flex-col">
+            <section className="flex flex-grow flex-shrink-0 basis-auto flex-col justify-center items-center mx-auto overflow-auto md">
+              <ModeToggle />
+              <Dashboard />
+            </section>
+          </div>
+        </main>
       </div>
     </ThemeProvider>
   );
