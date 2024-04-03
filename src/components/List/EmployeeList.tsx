@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import Employee from "@/components/List/Employee";
-import EmployeeSkeleton from "@/components/Skeleton/EmployeeSkeleton";
 import { EmployeeContext } from "@/context/EmployeeContext";
+import EmployeeSkeletonGroup from "@/components/Skeleton/EmployeeSkeletonGroup";
 
 interface EmployeeListProps {}
 
@@ -9,7 +9,7 @@ const EmployeeList: React.FC<EmployeeListProps> = () => {
   const { filteredEmployees, loading } = useContext(EmployeeContext);
 
   if (loading) {
-    return <EmployeeSkeleton />;
+    return <EmployeeSkeletonGroup />;
   }
 
   if (filteredEmployees.length === 0) {
@@ -21,17 +21,19 @@ const EmployeeList: React.FC<EmployeeListProps> = () => {
   }
 
   return (
-    <div className="w-full rounded-md grid grid-cols-1 gap-8 md:grid-cols-2">
-      {filteredEmployees.map(({ uuid, promoted, name, salary }) => (
-        <Employee
-          uuid={uuid}
-          key={uuid}
-          promoted={promoted}
-          name={name}
-          salary={salary}
-        />
-      ))}
-    </div>
+    <>
+      <div className="w-full rounded-md grid grid-cols-1 gap-8 md:grid-cols-2">
+        {filteredEmployees.map(({ uuid, promoted, name, salary }) => (
+          <Employee
+            uuid={uuid}
+            key={uuid}
+            promoted={promoted}
+            name={name}
+            salary={salary}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 
