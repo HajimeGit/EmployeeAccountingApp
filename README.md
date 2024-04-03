@@ -1,39 +1,41 @@
-# Material UI - Vite.js in TypeScript example
+
+# Employee Accounting App
+A simple app to manage employee data.
+
+![Employee Accounting App](./assets/readme/employee-accounting-app.png)
+
+## Features
+- Add new employee with name and salary
+- Delete employee
+- Edit employee
+- Search employee by name
+- Sort employee by promoted property and salary
+- Change theme between light and dark mode
+
+## Tech Stack
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+- Shadcn
 
 ## How to use
-
-Download the example [or clone the repo](https://github.com/mui/material-ui):
-
-<!-- #default-branch-switch -->
-
-```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/material-ui-vite-ts
-cd material-ui-vite-ts
+1. Clone the repo
+``` bash
+git clone https://github.com/HajimeGit/EmployeeAccountingApp.git
 ```
 
-Install it and run:
-
-```bash
+2. Install dependencies
+``` bash
 npm install
+```
+
+3. Start the dev server
+``` bash
 npm run dev
 ```
 
-or:
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/material-ui-vite-ts)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/master/examples/material-ui-vite-ts)
-
-## The idea behind the example
-
-This example uses [Vite.js](https://github.com/vitejs/vite).
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5.
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+  
